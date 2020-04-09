@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+/* 1. Hide the default checkbox */
+input[type=checkbox] {
+    display: none;
+}
+
+/* 2. Create the slider  */
+label {
+    cursor: pointer;
+    text-indent: -9999;
+    width: 100px;
+    height: 50px;
+    background-color: #dff7fa;
+    border-radius: 25px;
+    position: relative;
+    transition: all .4s ease-out;
+}
+
+label:after {
+    content:'Off';
+    position:absolute;
+    top:5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color:#a5cace;
+    border-radius: 50%;
+    transition: all .4s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 3. Create the styling for the checked state */
+
+input:checked + label {
+    background:#96e7ef;
+}
+
+
+input:checked +label:after {
+    transform: translate3d(50px,0,0);
+    background-color:#1d6269;
+    content: 'On';
+}
